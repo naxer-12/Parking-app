@@ -1,4 +1,4 @@
-# Parking-app
+# Parking App
 
 ## Team Members
 - Maitri Modi (101318200)
