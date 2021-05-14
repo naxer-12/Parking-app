@@ -12,22 +12,21 @@ Update Profile | Sign In, Sign Out
 Delete Profile | Sign Up
 View Parking | Add Parking 
 
+## Entities
+- User
+  - Email
+  - Password
+  - Contact number
+  - Car plate number
 
-Rough Idea
+- Parking
+  - Building Code
+  - Number of hours parked
+  - Location
+  - Date
 
-entities will be 
-User
- - email
- - password
- - contact
- - car number
- 
-Parking 
- - buildin code
- - no of hrs
- - car number
- - location
- - date
 
-as the course suggest firebase we are considering nosql therefore there will be 2 documents based on user i.e profile and parking records in parking documents
+
+
+
 
