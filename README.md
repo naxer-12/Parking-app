@@ -14,16 +14,20 @@ View Parking | Add Parking
 
 ## Entities
 - User
+  - Name
+  - Password
   - Email
   - Password
   - Contact number
   - Car plate number
+  - Profile picture (optional)
 
 - Parking
   - Building Code
-  - Number of hours parked
-  - Location
-  - Date
+  - Number of hours intended to park
+  - Car plate number
+  - Parking location
+  - Date and time of parking
 
 
 
