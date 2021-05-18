@@ -12,6 +12,11 @@ Update Profile | Sign In, Sign Out
 Delete Profile | Sign Up
 View Parking | Add Parking 
 
+
+
+## WE HAVE DECIDED TO USE CORE DATA BASED ON GIVEN REQUIREMENTS 
+
+
 ## Entities
 - User
   - Name
@@ -31,6 +36,8 @@ View Parking | Add Parking
 
 
 
+-- ERD
+![ERD](https://user-images.githubusercontent.com/32859295/118658880-6e9e8b80-b80a-11eb-8ba6-bb08a501cdc6.png)
 
 
 
