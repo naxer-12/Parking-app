@@ -14,6 +14,9 @@
 		52B9ECFA264D9CEC0069C652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B9ECF9264D9CEC0069C652 /* Assets.xcassets */; };
 		52B9ECFD264D9CEC0069C652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B9ECFB264D9CEC0069C652 /* LaunchScreen.storyboard */; };
 		52B9ED05264DA9C70069C652 /* signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9ED04264DA9C70069C652 /* signup.swift */; };
+		D5C27F7926540CE2006F3509 /* ParkingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C27F7826540CE2006F3509 /* ParkingTableViewController.swift */; };
+		D5C27F7B26541B89006F3509 /* ParkingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C27F7A26541B89006F3509 /* ParkingTableViewCell.swift */; };
+		D5C27F7E26542332006F3509 /* ParkingModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5C27F7C26542331006F3509 /* ParkingModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		52B9ECFC264D9CEC0069C652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52B9ECFE264D9CEC0069C652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52B9ED04264DA9C70069C652 /* signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signup.swift; sourceTree = "<group>"; };
+		D5C27F7826540CE2006F3509 /* ParkingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingTableViewController.swift; sourceTree = "<group>"; };
+		D5C27F7A26541B89006F3509 /* ParkingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingTableViewCell.swift; sourceTree = "<group>"; };
+		D5C27F7D26542331006F3509 /* ParkingModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ParkingModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		52B9ECEF264D9CE80069C652 /* carpa */ = {
 			isa = PBXGroup;
 			children = (
+				D5C27F692653F3A3006F3509 /* Views */,
 				52B9ECF0264D9CE80069C652 /* AppDelegate.swift */,
 				52B9ECF2264D9CE80069C652 /* SceneDelegate.swift */,
 				52B9ECF4264D9CE80069C652 /* ViewController.swift */,
@@ -66,8 +73,18 @@
 				52B9ECF9264D9CEC0069C652 /* Assets.xcassets */,
 				52B9ECFB264D9CEC0069C652 /* LaunchScreen.storyboard */,
 				52B9ECFE264D9CEC0069C652 /* Info.plist */,
+				D5C27F7C26542331006F3509 /* ParkingModel.xcdatamodeld */,
 			);
 			path = carpa;
+			sourceTree = "<group>";
+		};
+		D5C27F692653F3A3006F3509 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D5C27F7826540CE2006F3509 /* ParkingTableViewController.swift */,
+				D5C27F7A26541B89006F3509 /* ParkingTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +158,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5C27F7E26542332006F3509 /* ParkingModel.xcdatamodeld in Sources */,
 				52B9ECF5264D9CE80069C652 /* ViewController.swift in Sources */,
 				52B9ED05264DA9C70069C652 /* signup.swift in Sources */,
+				D5C27F7926540CE2006F3509 /* ParkingTableViewController.swift in Sources */,
 				52B9ECF1264D9CE80069C652 /* AppDelegate.swift in Sources */,
+				D5C27F7B26541B89006F3509 /* ParkingTableViewCell.swift in Sources */,
 				52B9ECF3264D9CE80069C652 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +360,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D5C27F7C26542331006F3509 /* ParkingModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D5C27F7D26542331006F3509 /* ParkingModel.xcdatamodel */,
+			);
+			currentVersion = D5C27F7D26542331006F3509 /* ParkingModel.xcdatamodel */;
+			path = ParkingModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 52B9ECE5264D9CE80069C652 /* Project object */;
 }
