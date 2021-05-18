@@ -24,7 +24,6 @@ View Parking | Add Parking
   - Name
   - Password
   - Email
-  - Password
   - Contact number
   - Car plate number(FK)
   - Profile picture (optional)
