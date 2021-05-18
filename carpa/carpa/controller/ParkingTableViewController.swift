@@ -38,6 +38,12 @@ class ParkingTableViewController: UIViewController, UITableViewDelegate, UITable
     @objc
        func addParkingBtnClicked() {
            print("add parking button clicked")
+        guard let addUpdateVC = storyboard?.instantiateViewController(identifier: "AddParkingScreen") as? AddParkingController else{
+                   return
+               }
+               
+               
+               show(addUpdateVC, sender: self)
        }
     
     @IBOutlet weak var parkingTableView: UITableView!

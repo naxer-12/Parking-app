@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		527BE08B265448A6009F1FA0 /* AddParkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527BE08A265448A6009F1FA0 /* AddParkingController.swift */; };
 		52B9ECF1264D9CE80069C652 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9ECF0264D9CE80069C652 /* AppDelegate.swift */; };
 		52B9ECF3264D9CE80069C652 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9ECF2264D9CE80069C652 /* SceneDelegate.swift */; };
 		52B9ECF5264D9CE80069C652 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9ECF4264D9CE80069C652 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		527BE08A265448A6009F1FA0 /* AddParkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddParkingController.swift; sourceTree = "<group>"; };
 		52B9ECED264D9CE80069C652 /* carpa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carpa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B9ECF0264D9CE80069C652 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52B9ECF2264D9CE80069C652 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		527BE0892654484C009F1FA0 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				527BE08A265448A6009F1FA0 /* AddParkingController.swift */,
+				52B9ECF4264D9CE80069C652 /* ViewController.swift */,
+				D5C27F7826540CE2006F3509 /* ParkingTableViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
 		52B9ECE4264D9CE80069C652 = {
 			isa = PBXGroup;
 			children = (
@@ -64,10 +76,10 @@
 		52B9ECEF264D9CE80069C652 /* carpa */ = {
 			isa = PBXGroup;
 			children = (
+				527BE0892654484C009F1FA0 /* controller */,
 				D5C27F692653F3A3006F3509 /* Views */,
 				52B9ECF0264D9CE80069C652 /* AppDelegate.swift */,
 				52B9ECF2264D9CE80069C652 /* SceneDelegate.swift */,
-				52B9ECF4264D9CE80069C652 /* ViewController.swift */,
 				52B9ECF6264D9CE80069C652 /* Main.storyboard */,
 				52B9ED04264DA9C70069C652 /* signup.swift */,
 				52B9ECF9264D9CEC0069C652 /* Assets.xcassets */,
@@ -81,7 +93,6 @@
 		D5C27F692653F3A3006F3509 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D5C27F7826540CE2006F3509 /* ParkingTableViewController.swift */,
 				D5C27F7A26541B89006F3509 /* ParkingTableViewCell.swift */,
 			);
 			path = Views;
@@ -164,6 +175,7 @@
 				D5C27F7926540CE2006F3509 /* ParkingTableViewController.swift in Sources */,
 				52B9ECF1264D9CE80069C652 /* AppDelegate.swift in Sources */,
 				D5C27F7B26541B89006F3509 /* ParkingTableViewCell.swift in Sources */,
+				527BE08B265448A6009F1FA0 /* AddParkingController.swift in Sources */,
 				52B9ECF3264D9CE80069C652 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
