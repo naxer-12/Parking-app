@@ -70,5 +70,9 @@ View Parking | Add Parking
   <img width="332" alt="Parking details" src="https://user-images.githubusercontent.com/38577874/118697314-cb12a280-b82c-11eb-8cfd-b234a3ac8caa.png">
 
 
+    ## add to parking
+   <img width="332" alt="Add to Parking" src="https://user-images.githubusercontent.com/32859295/118711755-91966300-b83d-11eb-8f90-de24cff9c19c.png">
+
+
 
 
