@@ -46,25 +46,27 @@ View Parking | Add Parking
 
 
 - ERD
-![ERD](https://user-images.githubusercontent.com/32859295/118658880-6e9e8b80-b80a-11eb-8ba6-bb08a501cdc6.png)
+
+  -![ERD](https://user-images.githubusercontent.com/32859295/118658880-6e9e8b80-b80a-11eb-8ba6-bb08a501cdc6.png)
 
 - Screen shots
-  - Sign in page
+
+   ## Sign in page
   <img width="602" alt="Sign-in page" src="https://user-images.githubusercontent.com/38577874/118697214-afa79780-b82c-11eb-821e-39e6db8a2873.png">
   
   
   
-  - User Registration
+    ## User Registration
   <img width="321" alt="User registration" src="https://user-images.githubusercontent.com/38577874/118697259-bc2bf000-b82c-11eb-8363-f4872d4f3726.png">
   
   
 
-  - Parking List
+    ## Parking List
   <img width="360" alt="Parking list" src="https://user-images.githubusercontent.com/38577874/118697283-c3eb9480-b82c-11eb-821f-94c3d754162b.png">
   
   
 
-  - Parking Details
+    ## Parking Details
   <img width="332" alt="Parking details" src="https://user-images.githubusercontent.com/38577874/118697314-cb12a280-b82c-11eb-8cfd-b234a3ac8caa.png">
 
 
