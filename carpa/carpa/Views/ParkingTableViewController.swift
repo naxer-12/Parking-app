@@ -30,14 +30,17 @@ class ParkingTableViewController: UIViewController, UITableViewDelegate, UITable
         override func viewDidLoad() {
         super.viewDidLoad()
             
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Park your car", style: .plain, target: self, action: #selector(addParkingBtnClicked))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Park car", style: .plain, target: self, action: #selector(addParkingBtnClicked))
 
         
     }
 
     @objc
        func addParkingBtnClicked() {
-           print("add parking button clicked")
+            print("add parking button clicked")
+            let addParkingViewController = self.storyboard?.instantiateViewController(identifier: "add_parking") as! AddParkingViewController
+            
+            self.navigationController?.pushViewController(addParkingViewController, animated: true)
        }
     
     @IBOutlet weak var parkingTableView: UITableView!

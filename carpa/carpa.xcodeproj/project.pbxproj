@@ -17,6 +17,7 @@
 		D5C27F7926540CE2006F3509 /* ParkingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C27F7826540CE2006F3509 /* ParkingTableViewController.swift */; };
 		D5C27F7B26541B89006F3509 /* ParkingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C27F7A26541B89006F3509 /* ParkingTableViewCell.swift */; };
 		D5C27F7E26542332006F3509 /* ParkingModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5C27F7C26542331006F3509 /* ParkingModel.xcdatamodeld */; };
+		D5C27FAB26591C1D006F3509 /* AddParkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C27FAA26591C1D006F3509 /* AddParkingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D5C27F7826540CE2006F3509 /* ParkingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingTableViewController.swift; sourceTree = "<group>"; };
 		D5C27F7A26541B89006F3509 /* ParkingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingTableViewCell.swift; sourceTree = "<group>"; };
 		D5C27F7D26542331006F3509 /* ParkingModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ParkingModel.xcdatamodel; sourceTree = "<group>"; };
+		D5C27FAA26591C1D006F3509 /* AddParkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddParkingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				52B9ECF4264D9CE80069C652 /* ViewController.swift */,
 				52B9ECF6264D9CE80069C652 /* Main.storyboard */,
 				52B9ED04264DA9C70069C652 /* signup.swift */,
+				D5C27FAA26591C1D006F3509 /* AddParkingViewController.swift */,
 				52B9ECF9264D9CEC0069C652 /* Assets.xcassets */,
 				52B9ECFB264D9CEC0069C652 /* LaunchScreen.storyboard */,
 				52B9ECFE264D9CEC0069C652 /* Info.plist */,
@@ -163,6 +166,7 @@
 				52B9ED05264DA9C70069C652 /* signup.swift in Sources */,
 				D5C27F7926540CE2006F3509 /* ParkingTableViewController.swift in Sources */,
 				52B9ECF1264D9CE80069C652 /* AppDelegate.swift in Sources */,
+				D5C27FAB26591C1D006F3509 /* AddParkingViewController.swift in Sources */,
 				D5C27F7B26541B89006F3509 /* ParkingTableViewCell.swift in Sources */,
 				52B9ECF3264D9CE80069C652 /* SceneDelegate.swift in Sources */,
 			);

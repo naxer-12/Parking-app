@@ -17,20 +17,17 @@ class signup: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "View All", style: .plain, target: self, action: #selector(viewAllBtnClicked))
+//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "View All", style: .plain, target: self, action: #selector(viewAllBtnClicked))
 
     }
     
-    @objc
-    func viewAllBtnClicked() {
+    @IBAction func registerBtnClicked(_ sender: Any) {
         print("view all button clicked")
         
-        let parkingListViewController = self.storyboard?.instantiateViewController(identifier: "parking_list") as! ParkingTableViewController
+        let addParkingViewController = self.storyboard?.instantiateViewController(identifier: "add_parking") as! AddParkingViewController
         
-        self.navigationController?.pushViewController(parkingListViewController, animated: true)
-
-
+        self.navigationController?.pushViewController(addParkingViewController, animated: true)
     }
-
+    
 }
 
