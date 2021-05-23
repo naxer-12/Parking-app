@@ -1,26 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Parking" representedClassName="Parking" syncable="YES" codeGenerationType="class">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19H1030" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Parking" representedClassName="Parking" syncable="YES">
         <attribute name="buildingCode" optional="YES" attributeType="String"/>
-        <attribute name="carPlateNumber" optional="YES" attributeType="String"/>
-        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="long" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="carPlateNo" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="parkingHours" optional="YES" attributeType="String"/>
         <attribute name="parkingId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="streetAddress" optional="YES" attributeType="String"/>
+        <attribute name="parkingLat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="parkingLong" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="parkingStreetAddress" optional="YES" attributeType="String"/>
         <attribute name="suitNoOfHost" optional="YES" attributeType="String"/>
+        <attribute name="userCurrentLan" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="userCurrentLat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="userStreetAddress" optional="YES" attributeType="String"/>
+        <relationship name="toUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="parkingRecords" inverseEntity="User"/>
     </entity>
-    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+    <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="carPlateNumber" optional="YES" attributeType="String"/>
         <attribute name="contactNumber" optional="YES" attributeType="String"/>
         <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
-        <attribute name="profilePicture" optional="YES" attributeType="String"/>
+        <attribute name="profilePicture" optional="YES" attributeType="Binary"/>
         <attribute name="userId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="userName" optional="YES" attributeType="String"/>
+        <relationship name="parkingRecords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Parking" inverseName="toUser" inverseEntity="Parking"/>
     </entity>
     <elements>
-        <element name="Parking" positionX="0" positionY="45" width="128" height="149"/>
-        <element name="User" positionX="-36" positionY="9" width="128" height="134"/>
+        <element name="Parking" positionX="149.0703125" positionY="18.94140625" width="179.7109375" height="238"/>
+        <element name="User" positionX="-36" positionY="9" width="128" height="163"/>
     </elements>
 </model>
