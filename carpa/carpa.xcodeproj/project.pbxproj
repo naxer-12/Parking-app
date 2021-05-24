@@ -21,7 +21,6 @@
 		52576959265AD1D1004B5669 /* UserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52576958265AD1D1004B5669 /* UserExtension.swift */; };
 		5257695B265AD1E3004B5669 /* ParkingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257695A265AD1E3004B5669 /* ParkingExtension.swift */; };
 		52576960265B0CD6004B5669 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257695F265B0CD6004B5669 /* AppStore.swift */; };
-		527BE08B265448A6009F1FA0 /* AddParkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527BE08A265448A6009F1FA0 /* AddParkingController.swift */; };
 		52B9ECF1264D9CE80069C652 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9ECF0264D9CE80069C652 /* AppDelegate.swift */; };
 		52B9ECF3264D9CE80069C652 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9ECF2264D9CE80069C652 /* SceneDelegate.swift */; };
 		52B9ECF5264D9CE80069C652 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9ECF4264D9CE80069C652 /* SignInController.swift */; };
@@ -32,6 +31,7 @@
 		D5C27F7926540CE2006F3509 /* ParkingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C27F7826540CE2006F3509 /* ParkingTableViewController.swift */; };
 		D5C27F7B26541B89006F3509 /* ParkingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C27F7A26541B89006F3509 /* ParkingTableViewCell.swift */; };
 		D5C27F7E26542332006F3509 /* ParkingModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5C27F7C26542331006F3509 /* ParkingModel.xcdatamodeld */; };
+		D5C27FC1265BC84D006F3509 /* AddParkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C27FC0265BC84D006F3509 /* AddParkingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +49,6 @@
 		52576958265AD1D1004B5669 /* UserExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExtension.swift; sourceTree = "<group>"; };
 		5257695A265AD1E3004B5669 /* ParkingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingExtension.swift; sourceTree = "<group>"; };
 		5257695F265B0CD6004B5669 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = SOURCE_ROOT; };
-		527BE08A265448A6009F1FA0 /* AddParkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddParkingController.swift; sourceTree = "<group>"; };
 		52B9ECED264D9CE80069C652 /* carpa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carpa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B9ECF0264D9CE80069C652 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52B9ECF2264D9CE80069C652 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		D5C27F7826540CE2006F3509 /* ParkingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingTableViewController.swift; sourceTree = "<group>"; };
 		D5C27F7A26541B89006F3509 /* ParkingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingTableViewCell.swift; sourceTree = "<group>"; };
 		D5C27F7D26542331006F3509 /* ParkingModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ParkingModel.xcdatamodel; sourceTree = "<group>"; };
+		D5C27FC0265BC84D006F3509 /* AddParkingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddParkingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,13 +116,6 @@
 			path = repository;
 			sourceTree = "<group>";
 		};
-		527BE0892654484C009F1FA0 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = controller;
-			sourceTree = "<group>";
-		};
 		52B9ECE4264D9CE80069C652 = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +139,6 @@
 				5257693C265A86DB004B5669 /* dbhelper */,
 				52576929265A79AA004B5669 /* model */,
 				5257692626597C3D004B5669 /* extension */,
-				527BE0892654484C009F1FA0 /* controller */,
 				D5C27F692653F3A3006F3509 /* Views */,
 				52B9ECF0264D9CE80069C652 /* AppDelegate.swift */,
 				52B9ECF2264D9CE80069C652 /* SceneDelegate.swift */,
@@ -163,8 +155,8 @@
 		D5C27F692653F3A3006F3509 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D5C27FC0265BC84D006F3509 /* AddParkingViewController.swift */,
 				52B9ED04264DA9C70069C652 /* SignUpController.swift */,
-				527BE08A265448A6009F1FA0 /* AddParkingController.swift */,
 				D5C27F7826540CE2006F3509 /* ParkingTableViewController.swift */,
 				52B9ECF4264D9CE80069C652 /* SignInController.swift */,
 				D5C27F7A26541B89006F3509 /* ParkingTableViewCell.swift */,
@@ -252,6 +244,7 @@
 				5257694E265A8FEB004B5669 /* User+CoreDataClass.swift in Sources */,
 				52B9ECF1264D9CE80069C652 /* AppDelegate.swift in Sources */,
 				5257692826597C52004B5669 /* StringExtension.swift in Sources */,
+				D5C27FC1265BC84D006F3509 /* AddParkingViewController.swift in Sources */,
 				52576960265B0CD6004B5669 /* AppStore.swift in Sources */,
 				5257693F265A873A004B5669 /* UserProfileRepo.swift in Sources */,
 				D5C27F7B26541B89006F3509 /* ParkingTableViewCell.swift in Sources */,
@@ -259,7 +252,6 @@
 				52576941265A8776004B5669 /* UserProfile.swift in Sources */,
 				5257695B265AD1E3004B5669 /* ParkingExtension.swift in Sources */,
 				52576951265AA9D6004B5669 /* BaseRepository.swift in Sources */,
-				527BE08B265448A6009F1FA0 /* AddParkingController.swift in Sources */,
 				5257694F265A8FEB004B5669 /* User+CoreDataProperties.swift in Sources */,
 				5257693B265A82D9004B5669 /* CoreDataStorage.swift in Sources */,
 				52B9ECF3264D9CE80069C652 /* SceneDelegate.swift in Sources */,

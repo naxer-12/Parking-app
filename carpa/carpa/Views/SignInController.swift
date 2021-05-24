@@ -76,10 +76,9 @@ class SignInController: UIViewController {
         if let data = userData{
             
             appStore.saveUserEmail(email: data.email)
+            appStore.saveCarPlateNo(carPlateNo: data.carPlateNumber)
             appStore.saveUserId(currentUserId: data.userId.uuidString)
             appStore.setUserLoggedIn(isUserLoggedIn: true)
-            
-            
             
         }
         else{

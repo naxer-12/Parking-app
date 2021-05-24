@@ -14,8 +14,17 @@ class AppStore{
     func saveUserEmail(email:String){
         defaults.setValue(email, forKey: "UserEmail")
     }
+    
+    func saveCarPlateNo(carPlateNo:String){
+        defaults.setValue(carPlateNo, forKey: "CarPlateNo")
+    }
+    
     func getUserEmail()->String{
         return defaults.string(forKey: "UserEmail") ?? ""
+    }
+    
+    func getCarPlateNo()->String{
+        return defaults.string(forKey: "CarPlateNo") ?? ""
     }
     
     func isUserLoggedIn()->Bool{

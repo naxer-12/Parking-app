@@ -9,35 +9,18 @@
 import Foundation
 
 class ParkingModel{
-     init(bcode: String?, noOfHours: String?, carPlate: String?, noOfHost: String?, parkingDate: Date?, currentLat: Double?, currentLan: Double?, currentStreetAddr: String?, parkLat: Double?, parkLon: Double?, parkStreetAddr: String?, parkId: UUID?) {
-        self.bcode = bcode
-        self.noOfHours = noOfHours
-        self.carPlate = carPlate
-        self.noOfHost = noOfHost
-        self.parkingDate = parkingDate
-        self.currentLat = currentLat
-        self.currentLan = currentLan
-        self.currentStreetAddr = currentStreetAddr
-        self.parkLat = parkLat
-        self.parkLon = parkLon
-        self.parkStreetAddr = parkStreetAddr
-        self.parkId = parkId
+     init(buildingCode: String?, carPlateNo: String?, dateTimeOfParking:Date?, parkingHours: String?, parkingId: UUID?, parkingLat: Double?, parkingLng: Double?, parkingStreetAddress: String?, suitNoOfHost: String?) {
+        self.buildingCode = buildingCode
+        self.carPlateNo = carPlateNo
+        self.dateTimeOfParking = dateTimeOfParking
+        self.parkingHours = parkingHours
+        self.parkingId = parkingId
+        self.parkingLat = parkingLat
+        self.parkingLng = parkingLng
+        self.parkingStreetAddress = parkingStreetAddress
+        self.suitNoOfHost = suitNoOfHost
     }
     
-     
-    
-    let bcode:String?
-    let noOfHours:String?
-    let carPlate:String?
-    let noOfHost:String?
-    let parkingDate:Date?
-    let currentLat:Double?
-    let currentLan:Double?
-    let currentStreetAddr:String?
-    let parkLat:Double?
-    let parkLon:Double?
-    let parkStreetAddr:String?
-    let parkId:UUID?
-    
+     let buildingCode: String?, carPlateNo: String?, dateTimeOfParking:Date?, parkingHours: String?, parkingId: UUID?, parkingLat: Double?, parkingLng: Double?, parkingStreetAddress: String?, suitNoOfHost: String?
 }
     

@@ -11,7 +11,7 @@ extension Parking
 {
     func convertToParking() -> ParkingModel
     {
-        return ParkingModel(bcode: self.buildingCode!, noOfHours:self.parkingHours!, carPlate: self.carPlateNo!, noOfHost: self.suitNoOfHost!, parkingDate: self.date!, currentLat: self.userCurrentLat, currentLan: self.userCurrentLan, currentStreetAddr: self.userStreetAddress, parkLat: self.parkingLat, parkLon: self.parkingLong, parkStreetAddr: self.parkingStreetAddress, parkId: self.parkingId!)
+        return ParkingModel(buildingCode: self.buildingCode!, carPlateNo: self.carPlateNo!, dateTimeOfParking: self.date, parkingHours: self.parkingHours, parkingId: self.parkingId!, parkingLat: self.parkingLat, parkingLng: self.parkingLong, parkingStreetAddress: self.parkingStreetAddress!, suitNoOfHost: self.suitNoOfHost!)
         
     }
 }

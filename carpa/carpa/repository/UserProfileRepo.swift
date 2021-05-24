@@ -45,28 +45,28 @@ struct UserProfileRepo: BaseRepository {
         userProfile?.password=record.password
         userProfile?.carPlateNumber = record.carPlateNumber
         userProfile?.contactNumber=record.contactNumber
-        if(record.parkingRecords != nil && record.parkingRecords?.count != 0)
-        {
-            var parkRecords = Set<Parking>()
-            record.parkingRecords?.forEach({ (parkRec) in
-                
-                let parkingRec = Parking(context: CoreDataStorage.shared.context)
-                parkingRec.buildingCode = parkRec.bcode
-                parkingRec.carPlateNo = parkRec.carPlate
-                parkingRec.date = parkRec.parkingDate
-                parkingRec.parkingHours = parkRec.noOfHours
-                parkingRec.parkingId = parkRec.parkId
-                parkingRec.parkingLat = parkRec.parkLat ?? 0.0
-                parkingRec.parkingLong = parkRec.parkLon ?? 0.0
-                parkingRec.parkingStreetAddress = parkRec.parkStreetAddr
-                parkingRec.userCurrentLan = parkRec.currentLan ?? 0.0
-                parkingRec.userCurrentLat = parkRec.currentLat ?? 0.0
-                parkingRec.suitNoOfHost = parkRec.noOfHost
-                parkRecords.insert(parkingRec)
-            })
-            
-            userProfile?.parkingRecords = parkRecords
-        }
+//        if(record.parkingRecords != nil && record.parkingRecords?.count != 0)
+//        {
+//            var parkRecords = Set<Parking>()
+//            record.parkingRecords?.forEach({ (parkRec) in
+//
+//                let parkingRec = Parking(context: CoreDataStorage.shared.context)
+//                parkingRec.buildingCode = parkRec.bcode
+//                parkingRec.carPlateNo = parkRec.carPlate
+//                parkingRec.date = parkRec.parkingDate
+//                parkingRec.parkingHours = parkRec.noOfHours
+//                parkingRec.parkingId = parkRec.parkId
+//                parkingRec.parkingLat = parkRec.parkLat ?? 0.0
+//                parkingRec.parkingLong = parkRec.parkLon ?? 0.0
+//                parkingRec.parkingStreetAddress = parkRec.parkStreetAddr
+//                parkingRec.userCurrentLan = parkRec.currentLan ?? 0.0
+//                parkingRec.userCurrentLat = parkRec.currentLat ?? 0.0
+//                parkingRec.suitNoOfHost = parkRec.noOfHost
+//                parkRecords.insert(parkingRec)
+//            })
+//
+//            userProfile?.parkingRecords = parkRecords
+//        }
         
         CoreDataStorage.shared.saveContext()
         return true
