@@ -32,6 +32,7 @@
 		D5C27F7B26541B89006F3509 /* ParkingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C27F7A26541B89006F3509 /* ParkingTableViewCell.swift */; };
 		D5C27F7E26542332006F3509 /* ParkingModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5C27F7C26542331006F3509 /* ParkingModel.xcdatamodeld */; };
 		D5C27FC1265BC84D006F3509 /* AddParkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C27FC0265BC84D006F3509 /* AddParkingViewController.swift */; };
+		D5C27FC3265C080C006F3509 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C27FC2265C080C006F3509 /* Validation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		D5C27F7A26541B89006F3509 /* ParkingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingTableViewCell.swift; sourceTree = "<group>"; };
 		D5C27F7D26542331006F3509 /* ParkingModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ParkingModel.xcdatamodel; sourceTree = "<group>"; };
 		D5C27FC0265BC84D006F3509 /* AddParkingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddParkingViewController.swift; sourceTree = "<group>"; };
+		D5C27FC2265C080C006F3509 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				52B9ECFE264D9CEC0069C652 /* Info.plist */,
 				D5C27F7C26542331006F3509 /* ParkingModel.xcdatamodeld */,
 				5257695F265B0CD6004B5669 /* AppStore.swift */,
+				D5C27FC2265C080C006F3509 /* Validation.swift */,
 			);
 			path = carpa;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				D5C27FC1265BC84D006F3509 /* AddParkingViewController.swift in Sources */,
 				52576960265B0CD6004B5669 /* AppStore.swift in Sources */,
 				5257693F265A873A004B5669 /* UserProfileRepo.swift in Sources */,
+				D5C27FC3265C080C006F3509 /* Validation.swift in Sources */,
 				D5C27F7B26541B89006F3509 /* ParkingTableViewCell.swift in Sources */,
 				52576953265AABBC004B5669 /* ParkingRepo.swift in Sources */,
 				52576941265A8776004B5669 /* UserProfile.swift in Sources */,

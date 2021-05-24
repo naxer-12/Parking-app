@@ -20,6 +20,7 @@ class AddParkingViewController: UIViewController, UIPickerViewDelegate, UIPicker
     private var cancellables : Set<AnyCancellable> = []
     let locationManager = CLLocationManager()
     let appStore: AppStore = AppStore();
+   
     var currentLat: Double?, currentLong: Double?, streetAddress: String?
     //MARK : Outlets
     
@@ -29,12 +30,22 @@ class AddParkingViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var parkingLocationSwitch: UISwitch!
     @IBOutlet weak var txtStreetName: UITextField!
     @IBOutlet weak var hoursToParkPicker: UIPickerView!
+    @IBOutlet weak var lblBuildingCodeError: UILabel!
+    @IBOutlet weak var lblSuitNoOfHostError: UILabel!
+    @IBOutlet weak var lblStreetNameError: UILabel!
+    @IBOutlet weak var lblCarPlateNoError: UILabel!
+    
     private let parkingRepo:ParkingRepo = ParkingRepo()
     private let geocoder = CLGeocoder()
     
     //MARK : Variables
     var hoursToParkData:[String] = [String]()
     var selectedHours: String = ""
+    var validateBuildingCode : Bool = false
+    var validateSuitNoOfHost : Bool = false
+    var validateCarPlateNo : Bool = false
+    
+    
     //MARK : Functions
     @IBAction func cancelBtnPressed(_ sender: Any) {
         hoursToParkPicker.selectRow(0, inComponent: 0, animated: true)
@@ -45,37 +56,80 @@ class AddParkingViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     
+    @IBAction func parkingLocationSwitchToggled(_ sender: Any) {
+            txtStreetName.isHidden = parkingLocationSwitch.isOn
+    }
+    
     @IBAction func parkBtnPressed(_ sender: Any) {
         print("park button clicked")
+        var isError : Bool = false
+        lblBuildingCodeError.text = ""
+        lblCarPlateNoError.text = ""
+        lblSuitNoOfHostError.text = ""
+        lblStreetNameError.text = ""
+        validateBuildingCode = Validation.validateBuildingCode(buildingCode: txtBuildingCode.text!)
         
-        if (parkingLocationSwitch.isOn) {
-            self.locationManager.requestWhenInUseAuthorization()
-            self.locationManager.requestAlwaysAuthorization()
-            
-            if CLLocationManager.locationServicesEnabled(){
-                
-                print(#function, "Location access granted")
-                
-                self.locationManager.delegate = self
-                self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-                self.locationManager.startUpdatingLocation()
-                
-            } else {
-                print(#function, "Location access denied")
-            }
-        } else {
-            print("I am hereeee")
-            guard let street = txtStreetName.text else {return}
-            streetAddress = street
-            self.getLocation(address: street)
+        if (!validateBuildingCode){
+            lblBuildingCodeError.isHidden = false
+                       lblBuildingCodeError.text = "Invalid field! Please enter exactly 5 alphanumeric characters. "
+                       lblBuildingCodeError.textColor = .red
+            isError = true
         }
-//        guard let buildingCode = txtBuildingCode.text, let carLicensePlate = txtCarLicensePlate.text, let suitNoOfHost = txtSuitNoOfHost.text,
-//           let phone = validatePhoneTxtFld.text else {
-//           return
-//        }
-        let parkingListViewController = self.storyboard?.instantiateViewController(identifier: "parking_list") as! ParkingTableViewController
         
-        self.navigationController?.pushViewController(parkingListViewController, animated: true)
+        validateSuitNoOfHost = Validation.validateSuitNoOfHost(suitNoOfHost: txtSuitNoOfHost.text!)
+        
+        if(!validateSuitNoOfHost){
+            lblSuitNoOfHostError.isHidden = false
+            lblSuitNoOfHostError.text = "Invalid field! Please enter minimum 2 and maximum 5 alphanumeric characters"
+            lblSuitNoOfHostError.textColor = .red
+            isError = true
+        }
+        
+        validateCarPlateNo = Validation.validateCarLicensePlate(carLicenseNo: txtCarLicensePlate.text!)
+        
+        if(!validateCarPlateNo){
+            lblCarPlateNoError.isHidden = false
+            lblCarPlateNoError.text = "Invalid field! Please edit car plate number to be minimum 2 and maximum 8 alphanumeric characters"
+            lblCarPlateNoError.textColor = .red
+            isError = true
+        }
+        
+        if(!parkingLocationSwitch.isOn){
+            guard !txtStreetName.text!.isEmpty else{
+                lblStreetNameError.isHidden = false
+                lblStreetNameError.text = "Please enter street address"
+                lblStreetNameError.textColor = .red
+                isError = true
+                return
+            }
+            
+        }
+        
+
+        if(!isError){
+            
+            
+            if (parkingLocationSwitch.isOn) {
+                self.locationManager.requestWhenInUseAuthorization()
+                self.locationManager.requestAlwaysAuthorization()
+                
+                if CLLocationManager.locationServicesEnabled(){
+                    
+                    print(#function, "Location access granted")
+                    
+                    self.locationManager.delegate = self
+                    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+                    self.locationManager.startUpdatingLocation()
+                    
+                } else {
+                    print(#function, "Location access denied")
+                }
+            } else{
+                guard let street = txtStreetName.text else {return}
+                streetAddress = street
+                self.getLocation(address: street)
+            }
+        }
     }
     
     //Number of columns of data
@@ -105,9 +159,17 @@ class AddParkingViewController: UIViewController, UIPickerViewDelegate, UIPicker
         // connecting data to picker view
         self.hoursToParkPicker.delegate = self
         self.hoursToParkPicker.dataSource = self
+        
         self.txtCarLicensePlate.text = appStore.getCarPlateNo()
+        
         // input the data into the array
         hoursToParkData = ["1-hour or less", "4-hours", "12-hours", "24-hours"]
+        
+        self.parkingLocationSwitch.isOn = false
+        self.lblBuildingCodeError.isHidden = true
+        self.lblSuitNoOfHostError.isHidden = true
+        self.lblStreetNameError.isHidden = true
+        self.lblCarPlateNoError.isHidden = true
     }
 }
 
@@ -139,8 +201,6 @@ extension AddParkingViewController : CLLocationManagerDelegate{
             self.txtStreetName.text = "No City Found"
         } else {
             if let placemarks = placemarkList, let placemark = placemarks.first{
-                
-                
                 let city = placemark.locality ?? "NA"// represent city, if coordinates represent ocean it will not provide
                 let province = placemark.administrativeArea ?? "NA"
                 let country = placemark.country ?? "NA"
@@ -149,7 +209,6 @@ extension AddParkingViewController : CLLocationManagerDelegate{
                 addParking()
             }else{
                 self.streetAddress = "Address not found!"
-                addParking()
             }
         }
     }
@@ -165,6 +224,8 @@ extension AddParkingViewController : CLLocationManagerDelegate{
             
             currentLat = 0
             currentLong = 0
+            lblStreetNameError.isHidden = false
+            lblStreetNameError.text = "Invalid street address"
         } else{
             var obtainedLocation : CLLocation?
             
@@ -179,6 +240,8 @@ extension AddParkingViewController : CLLocationManagerDelegate{
             }else {
                 currentLat = 0
                 currentLong = 0
+                lblStreetNameError.isHidden = false
+                lblStreetNameError.text = "Invalid street address"
             }
         }
     }
@@ -188,7 +251,11 @@ extension AddParkingViewController {
     func addParking() {
         let parkingModel: ParkingModel = ParkingModel(buildingCode: txtBuildingCode.text, carPlateNo: txtCarLicensePlate.text, dateTimeOfParking: Date(), parkingHours: selectedHours, parkingId: UUID(), parkingLat: currentLat, parkingLng: currentLong, parkingStreetAddress: streetAddress, suitNoOfHost: txtSuitNoOfHost.text)
         parkingRepo.createRecord(record: parkingModel)
-        print(#function, "Added parking")
+        
+        let parkingListViewController = self.storyboard?.instantiateViewController(identifier: "parking_list") as! ParkingTableViewController
+               
+               self.navigationController?.pushViewController(parkingListViewController, animated: true)
+               print(#function, "Added parking")
         
     }
 }
