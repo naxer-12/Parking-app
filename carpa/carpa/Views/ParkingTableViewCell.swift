@@ -15,17 +15,11 @@ class ParkingTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    @IBOutlet weak var txtBuildingCode: UILabel!
     
-    @IBOutlet weak var txtCarPlateNo: UILabel!
-    
+    @IBOutlet weak var txtStreetAddress: UILabel!
     @IBOutlet weak var txtHoursParked: UILabel!
     
-    @IBOutlet weak var txtSuitNoOfHost: UILabel!
-    
-    @IBOutlet weak var txtParkingLocation: UILabel!
-    
-    @IBOutlet weak var txtDateTime: UILabel!
+   
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

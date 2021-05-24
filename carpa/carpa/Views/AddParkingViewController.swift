@@ -40,7 +40,7 @@ class AddParkingViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     //MARK : Variables
     var hoursToParkData:[String] = [String]()
-    var selectedHours: String = ""
+    var selectedHours: String = "1-hour or less"
     var validateBuildingCode : Bool = false
     var validateSuitNoOfHost : Bool = false
     var validateCarPlateNo : Bool = false
@@ -49,6 +49,7 @@ class AddParkingViewController: UIViewController, UIPickerViewDelegate, UIPicker
     //MARK : Functions
     @IBAction func cancelBtnPressed(_ sender: Any) {
         hoursToParkPicker.selectRow(0, inComponent: 0, animated: true)
+        selectedHours = "1-hour or less"
         txtBuildingCode.text = ""
         txtSuitNoOfHost.text = ""
         txtStreetName.text = ""
