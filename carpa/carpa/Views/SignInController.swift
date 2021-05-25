@@ -77,6 +77,8 @@ class SignInController: UIViewController {
             
             appStore.saveUserEmail(email: data.email)
             appStore.saveCarPlateNo(carPlateNo: data.carPlateNumber)
+            
+            print("CURRENT USER ID \(data.userId.uuidString)")
             appStore.saveUserId(currentUserId: data.userId.uuidString)
             appStore.setUserLoggedIn(isUserLoggedIn: true)
             self.showToast(message: "User has successfully Signed in", font: .systemFont(ofSize: 12.0))
