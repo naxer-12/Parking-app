@@ -1,4 +1,8 @@
-//
+// Group no. : 10
+// Members:
+//    - Maitri Modi (101318200)
+//    - Jainam Shah (101277989)
+
 //  ParkingRepository.swift
 //  carpa
 //
@@ -12,10 +16,6 @@ import CoreData
 struct ParkingRepo: BaseRepository {
     
     func get(byIdentifier id: UUID) -> ParkingModel? {
-//        let parking = getParking(byId: <#T##UUID#>)
-//        guard parking != nil else {return nil}
-//
-//        return (parking?.convertToParking()())!
         return nil
     }
     
@@ -50,33 +50,20 @@ struct ParkingRepo: BaseRepository {
     func getAllParkings(userId : UUID?) -> [ParkingModel]{
             var parkingArr:[ParkingModel] = [ParkingModel]()
             let fetchRequest = NSFetchRequest<Parking>(entityName: "Parking")
-//            let carPlateNo: String = UserDefaults.standard.value(forKey: "carPlateNo") as! String
-//            print("Session CarPlate No: \(carPlateNo)")
+
         let predicate = NSPredicate(format: "userId==%@", userId! as CVarArg)
             fetchRequest.predicate = predicate
-//            do{
+
                 let result = try! CoreDataStorage.shared.context.fetch(fetchRequest)
-//                let result = try moc.fetch(fetchRequest)
-                let parkingList = result as [Parking]
+              let parkingList = result as [Parking]
                 for parkingData in parkingList{
                     let pModel: ParkingModel = ParkingModel(userId: parkingData.userId, buildingCode: parkingData.buildingCode, carPlateNo: parkingData.carPlateNo, dateTimeOfParking: parkingData.date, parkingHours: parkingData.parkingHours, parkingId: parkingData.parkingId, parkingLat: parkingData.parkingLat, parkingLng: parkingData.parkingLong, parkingStreetAddress: parkingData.parkingStreetAddress, suitNoOfHost: parkingData.suitNoOfHost)
                         parkingArr.append(pModel)
-                    //                    print("Building Code: \(parkindData.buildingCode!)\nTime of Parking: \(parkindData.timeOfParking)\nSuitNoofHost \(parkindData.suitNoOfHost!)\nCar Plate Number\(parkindData.carPlateNo!)\nNumber of Hrs Intended\(parkindData.noOfHrsIntended)\nLatitude\(parkindData.latitude)\nLongitude\(parkindData.longitude)")
-                }
-//            }catch let error{
-//                print(#function, "Couldn't fetch records", error.localizedDescription)
-//            }
-            return parkingArr
+               }
+          return parkingArr
         }
     
-//    func get(byIdentifier w: UUID) -> ParkingModel? {
-//        let parkingModel = getParking(byId: id)
-//        guard parkingModel != nil else {return nil}
-//
-//        return (parkingModel?.convertToParking())!
-//    }
-    
-    func updateRecord(record: ParkingModel) -> Bool {
+   func updateRecord(record: ParkingModel) -> Bool {
         // No update
         return false
     }

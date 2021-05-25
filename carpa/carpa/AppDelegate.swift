@@ -1,4 +1,8 @@
-//
+// Group no. : 10
+// Members:
+//    - Maitri Modi (101318200)
+//    - Jainam Shah (101277989)
+
 //  AppDelegate.swift
 //  carpa
 //
