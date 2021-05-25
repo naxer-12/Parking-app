@@ -14,9 +14,9 @@ Carpa is a parking Ios application which has following functionalities:-
 
 Maitri Modi | Jainam shah
 ------------|------------
-Update Profile | Sign In, Sign Out
-Delete Profile | Sign Up
-View Parking | Add Parking 
+Add Parking | Sign In, Sign Out, Sign up
+Parking List | Update profile
+View Parking | Delete profile
 
 
 
@@ -52,27 +52,21 @@ View Parking | Add Parking
 - Screen shots
 
    ## Sign in page
-  <img width="602" alt="Sign-in page" src="https://user-images.githubusercontent.com/38577874/118697214-afa79780-b82c-11eb-821e-39e6db8a2873.png">
-  
-  
+     <img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://user-images.githubusercontent.com/38577874/119565318-7391ab00-bdc7-11eb-9eb0-9b05451fb455.png" width="250" height="500">
   
     ## User Registration
-  <img width="321" alt="User registration" src="https://user-images.githubusercontent.com/38577874/118697259-bc2bf000-b82c-11eb-8363-f4872d4f3726.png">
-  
-  
+     <img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://user-images.githubusercontent.com/38577874/119565371-7e4c4000-bdc7-11eb-9db8-0b1cb5d162a9.png" width="250" height="500">
 
     ## Parking List
-  <img width="360" alt="Parking list" src="https://user-images.githubusercontent.com/38577874/118697283-c3eb9480-b82c-11eb-821f-94c3d754162b.png">
-  
-  
-
+     <img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://user-images.githubusercontent.com/38577874/119565540-b5baec80-bdc7-11eb-82e5-28540ea5c7af.png" width="250" height="500">
+     
     ## Parking Details
-  <img width="332" alt="Parking details" src="https://user-images.githubusercontent.com/38577874/118697314-cb12a280-b82c-11eb-8cfd-b234a3ac8caa.png">
+     <img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://user-images.githubusercontent.com/38577874/119565412-899f6b80-bdc7-11eb-96c8-abc358872dfe.png" width="250" height="500">
 
+   ## Add Parking
+     <img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://user-images.githubusercontent.com/38577874/119565453-94f29700-bdc7-11eb-8a0c-6b7d87b7d997.png" width="250" height="500">
 
-    ## add to parking
-   <img width="332" alt="Add to Parking" src="https://user-images.githubusercontent.com/32859295/118711755-91966300-b83d-11eb-8f90-de24cff9c19c.png">
-
-
+   ## User Settings
+     <img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://user-images.githubusercontent.com/38577874/119565526-adfb4800-bdc7-11eb-92ab-e2dbe53e514a.png" width="250" height="500">
 
 
