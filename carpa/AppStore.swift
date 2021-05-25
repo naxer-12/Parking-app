@@ -46,6 +46,13 @@ class AppStore{
 
     }
     
+    func removeUserData(){
+        defaults.removeObject(forKey: "currentUserId")
+        defaults.removeObject(forKey: "UserEmail")
+        defaults.removeObject(forKey: "CarPlateNo")
+        defaults.setValue(false, forKey: "isUserLoggedIn")
+    }
+    
     
     
     

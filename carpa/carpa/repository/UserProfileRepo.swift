@@ -73,9 +73,11 @@ struct UserProfileRepo: BaseRepository {
     }
     
     func deleteRecord(byIdentifier id: UUID) -> Bool {
+        print("ID \(id.uuidString)")
+        
         let userProfile = getUser(byId: id)
         guard userProfile != nil else {return false}
-        
+        print("GETTING USER PROFILE \(userProfile?.name)")
         CoreDataStorage.shared.context.delete(userProfile!)
         CoreDataStorage.shared.saveContext()
         
@@ -85,7 +87,7 @@ struct UserProfileRepo: BaseRepository {
     private func getUser(byId id: UUID) -> User?
     {
         let fetchRequest = NSFetchRequest<User>(entityName: "User")
-        let fetchById = NSPredicate(format: "id==%@", id as CVarArg)
+        let fetchById = NSPredicate(format: "userId==%@", id as CVarArg)
         fetchRequest.predicate = fetchById
         let result = try! CoreDataStorage.shared.context.fetch(fetchRequest)
         guard result.count != 0 else {return nil}
