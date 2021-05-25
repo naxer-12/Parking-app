@@ -1,4 +1,8 @@
-//
+// Group no. : 10
+// Members:
+//    - Maitri Modi (101318200)
+//    - Jainam Shah (101277989)
+
 //  ParkingDetailsViewController.swift
 //  carpa
 //
@@ -38,10 +42,6 @@ class ParkingDetailsViewController: UIViewController {
         lblStreetAddress.text = parkingData?.parkingStreetAddress
         lblDateAndTime.text = "\(parkingData?.dateTimeOfParking ?? Date())"
         
-        
-        
-        
-        
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.requestAlwaysAuthorization()
         
@@ -78,18 +78,12 @@ extension ParkingDetailsViewController: CLLocationManagerDelegate, MKMapViewDele
     
     func displayLocationOnMap(currentLocation : CLLocationCoordinate2D){
         let sourceCordinate = currentLocation
-        
-       
-        
         let destinationCordinate = CLLocationCoordinate2D(latitude: (parkingData?.parkingLat)!, longitude: (parkingData?.parkingLng)!)
         print("Destination \(destinationCordinate)" )
         let destPlaceMark = MKPlacemark(coordinate: destinationCordinate)
         let sourcePlaceMark = MKPlacemark(coordinate: sourceCordinate)
         print("Current \(sourceCordinate)")
-//        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-//        let region = MKCoordinateRegion(center: sourceCordinate, span: span)
-        
-        
+  
         let sourceItem = MKMapItem(placemark: sourcePlaceMark)
         let destItem = MKMapItem(placemark: destPlaceMark)
         
@@ -111,10 +105,6 @@ extension ParkingDetailsViewController: CLLocationManagerDelegate, MKMapViewDele
             self.lblMapView.addOverlay(route.polyline)
             self.lblMapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
         }
-        
-//        self.lblMapView?.setRegion(region, animated: true)
-        
-
         //display annotation -> pin
         let currentAnnotation = MKPointAnnotation()
         currentAnnotation.coordinate = sourceCordinate
@@ -124,13 +114,8 @@ extension ParkingDetailsViewController: CLLocationManagerDelegate, MKMapViewDele
         destinationAnnotation.coordinate = destinationCordinate
         destinationAnnotation.title = "Your car"
         
-        
         self.lblMapView?.addAnnotations([currentAnnotation, destinationAnnotation])
-        
-        
-
-
-    }
+   }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let render = MKPolylineRenderer(overlay: overlay as! MKPolyline)

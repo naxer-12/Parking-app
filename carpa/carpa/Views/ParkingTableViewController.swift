@@ -1,4 +1,7 @@
-//
+// Group no. : 10
+// Members:
+//    - Maitri Modi (101318200)
+//    - Jainam Shah (101277989)
 //  ParkingTableViewController.swift
 //  carpa
 //
@@ -70,7 +73,8 @@ class ParkingTableViewController: UIViewController, UITableViewDelegate, UITable
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Park car", style: .plain, target: self, action: #selector(addParkingBtnClicked))
         
         userId = UUID(uuidString: appStore.getUserId())
-        parkingRecords = parkingRepo.getAllParkings(userId: userId)
+
+        
         parkingTable.dataSource = self
         parkingTable.delegate = self
         parkingTable.rowHeight = 170
@@ -80,7 +84,7 @@ class ParkingTableViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        parkingRecords = parkingRepo.getAllParkings(userId: userId)
+        parkingRecords = parkingRepo.getAllParkings(userId: userId).reversed()
        parkingTable.reloadData()
    }
      func navigateToSignIn(){
@@ -139,15 +143,11 @@ class ParkingTableViewController: UIViewController, UITableViewDelegate, UITable
             
            }))
            
-//           alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
-//
-//           }))
 
            
            
 
            self.present(alert, animated: true, completion: {
-//               print("completion block")
            })
     }
     @objc
