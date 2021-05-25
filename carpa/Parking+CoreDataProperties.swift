@@ -16,7 +16,8 @@ extension Parking {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Parking> {
         return NSFetchRequest<Parking>(entityName: "Parking")
     }
-
+    
+    @NSManaged public var userId: UUID?
     @NSManaged public var buildingCode: String?
     @NSManaged public var carPlateNo: String?
     @NSManaged public var parkingLat: Double
