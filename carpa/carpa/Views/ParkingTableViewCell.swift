@@ -18,8 +18,8 @@ class ParkingTableViewCell: UITableViewCell {
     
     @IBOutlet weak var txtStreetAddress: UILabel!
     @IBOutlet weak var txtHoursParked: UILabel!
+    @IBOutlet weak var txtCarPlateNo: UILabel!
     
-   
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

@@ -45,8 +45,4 @@ class AppStore{
         return defaults.string(forKey: "currentUserId") ?? ""
 
     }
-    
-    
-    
-    
 }

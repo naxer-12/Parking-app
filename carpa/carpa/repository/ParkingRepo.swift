@@ -23,6 +23,7 @@ struct ParkingRepo: BaseRepository {
     func createRecord(record: ParkingModel) {
         let parkingData=Parking(context: CoreDataStorage.shared.context)
         
+        parkingData.userId = record.userId
         parkingData.buildingCode = record.buildingCode
         parkingData.carPlateNo = record.carPlateNo
         parkingData.date = record.dateTimeOfParking
@@ -46,25 +47,25 @@ struct ParkingRepo: BaseRepository {
         return [] as? [ParkingModel]
     }
     
-    func getAllParkings(carPlateNo : String?) -> [ParkingModel]{
+    func getAllParkings(userId : UUID?) -> [ParkingModel]{
             var parkingArr:[ParkingModel] = [ParkingModel]()
             let fetchRequest = NSFetchRequest<Parking>(entityName: "Parking")
 //            let carPlateNo: String = UserDefaults.standard.value(forKey: "carPlateNo") as! String
 //            print("Session CarPlate No: \(carPlateNo)")
-        let predicate = NSPredicate(format: "carPlateNo == %@", carPlateNo as! CVarArg)
+        let predicate = NSPredicate(format: "userId==%@", userId! as CVarArg)
             fetchRequest.predicate = predicate
-            do{
+//            do{
                 let result = try! CoreDataStorage.shared.context.fetch(fetchRequest)
 //                let result = try moc.fetch(fetchRequest)
                 let parkingList = result as [Parking]
                 for parkingData in parkingList{
-                    var pModel: ParkingModel = ParkingModel(buildingCode: parkingData.buildingCode, carPlateNo: parkingData.carPlateNo, dateTimeOfParking: parkingData.date, parkingHours: parkingData.parkingHours, parkingId: parkingData.parkingId, parkingLat: parkingData.parkingLat, parkingLng: parkingData.parkingLong, parkingStreetAddress: parkingData.parkingStreetAddress, suitNoOfHost: parkingData.suitNoOfHost)
+                    let pModel: ParkingModel = ParkingModel(userId: parkingData.userId, buildingCode: parkingData.buildingCode, carPlateNo: parkingData.carPlateNo, dateTimeOfParking: parkingData.date, parkingHours: parkingData.parkingHours, parkingId: parkingData.parkingId, parkingLat: parkingData.parkingLat, parkingLng: parkingData.parkingLong, parkingStreetAddress: parkingData.parkingStreetAddress, suitNoOfHost: parkingData.suitNoOfHost)
                         parkingArr.append(pModel)
                     //                    print("Building Code: \(parkindData.buildingCode!)\nTime of Parking: \(parkindData.timeOfParking)\nSuitNoofHost \(parkindData.suitNoOfHost!)\nCar Plate Number\(parkindData.carPlateNo!)\nNumber of Hrs Intended\(parkindData.noOfHrsIntended)\nLatitude\(parkindData.latitude)\nLongitude\(parkindData.longitude)")
                 }
-            }catch let error{
-                print(#function, "Couldn't fetch records", error.localizedDescription)
-            }
+//            }catch let error{
+//                print(#function, "Couldn't fetch records", error.localizedDescription)
+//            }
             return parkingArr
         }
     

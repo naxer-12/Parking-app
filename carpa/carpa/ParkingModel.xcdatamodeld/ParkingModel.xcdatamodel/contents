@@ -10,6 +10,7 @@
         <attribute name="parkingLong" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="parkingStreetAddress" optional="YES" attributeType="String"/>
         <attribute name="suitNoOfHost" optional="YES" attributeType="String"/>
+        <attribute name="userId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="toUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="parkingRecords" inverseEntity="User"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
@@ -23,7 +24,7 @@
         <relationship name="parkingRecords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Parking" inverseName="toUser" inverseEntity="Parking"/>
     </entity>
     <elements>
-        <element name="Parking" positionX="149.0703125" positionY="18.94140625" width="179.7109375" height="179"/>
+        <element name="Parking" positionX="149.0703125" positionY="18.94140625" width="179.7109375" height="194"/>
         <element name="User" positionX="-36" positionY="9" width="128" height="163"/>
     </elements>
 </model>
