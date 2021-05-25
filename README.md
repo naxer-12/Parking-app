@@ -47,7 +47,8 @@ View Parking | Delete profile
 
 - ERD
 
-  -![ERD](https://user-images.githubusercontent.com/32859295/118658880-6e9e8b80-b80a-11eb-8ba6-bb08a501cdc6.png)
+![erd](https://user-images.githubusercontent.com/32859295/119567722-4abee500-bdca-11eb-9854-edd3b2a920b5.png)
+
 
 - Screen shots
 
