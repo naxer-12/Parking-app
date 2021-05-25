@@ -57,7 +57,8 @@ class ParkingTableViewController: UIViewController, UITableViewDelegate, UITable
         parkingTable.delegate = self
         parkingTable.rowHeight = 170
         
-        
+
+
     }
 
     @objc

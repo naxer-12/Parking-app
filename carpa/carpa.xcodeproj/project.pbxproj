@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52211D3B265CFE2100C8C849 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52211D3A265CFE2100C8C849 /* Toast.swift */; };
 		5257692826597C52004B5669 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257692726597C52004B5669 /* StringExtension.swift */; };
 		5257693B265A82D9004B5669 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257693A265A82D9004B5669 /* CoreDataStorage.swift */; };
 		5257693F265A873A004B5669 /* UserProfileRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257693E265A873A004B5669 /* UserProfileRepo.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52211D3A265CFE2100C8C849 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		5257692726597C52004B5669 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		5257693A265A82D9004B5669 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		5257693E265A873A004B5669 /* UserProfileRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRepo.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				5257692726597C52004B5669 /* StringExtension.swift */,
 				52576958265AD1D1004B5669 /* UserExtension.swift */,
 				5257695A265AD1E3004B5669 /* ParkingExtension.swift */,
+				52211D3A265CFE2100C8C849 /* Toast.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5C27F7E26542332006F3509 /* ParkingModel.xcdatamodeld in Sources */,
+				52211D3B265CFE2100C8C849 /* Toast.swift in Sources */,
 				52B9ECF5264D9CE80069C652 /* SignInController.swift in Sources */,
 				52B9ED05264DA9C70069C652 /* SignUpController.swift in Sources */,
 				D5C27F7926540CE2006F3509 /* ParkingTableViewController.swift in Sources */,

@@ -79,10 +79,13 @@ class SignInController: UIViewController {
             appStore.saveCarPlateNo(carPlateNo: data.carPlateNumber)
             appStore.saveUserId(currentUserId: data.userId.uuidString)
             appStore.setUserLoggedIn(isUserLoggedIn: true)
-            
+            self.showToast(message: "User has successfully Signed in", font: .systemFont(ofSize: 12.0))
+            checkUserLoggedIn()
+
         }
         else{
-            print("RESULT IS NIL")
+            self.showToast(message: "Unable to find user with this email id", font: .systemFont(ofSize: 12.0))
+
         }
         
     }
@@ -102,9 +105,9 @@ class SignInController: UIViewController {
         let currentUser = appStore.isUserLoggedIn()
         print(currentUser)
         if currentUser{
-            let SignUpController = self.storyboard?.instantiateViewController(identifier: "SignUpScreen") as! SignUpController
+            let parkingViewController = self.storyboard?.instantiateViewController(identifier: "parking_list") as! ParkingTableViewController
                    
-                   self.navigationController?.pushViewController(SignUpController, animated: true)
+                   self.navigationController?.pushViewController(parkingViewController, animated: true)
         }
     }
 }

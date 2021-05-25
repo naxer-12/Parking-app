@@ -145,8 +145,15 @@ class SignUpController: UIViewController {
         let userProfile :UserProfile = UserProfile(name: name, email: email, password: password, contactNumber: phone, carPlateNumber: carPlate, userId: UUID())
         
         userProfileRepo.createRecord(record: userProfile)
+        self.showToast(message: "Your account has been created", font: .systemFont(ofSize: 12.0))
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(SignUpController.pop), userInfo: nil, repeats: true)
+        
+        
+
     }
-    
+    @objc func pop(){
+        self.navigationController?.popViewController(animated: true)
+    }
     private func setupLabel(){
         emailError.text=""
         passwordError.text=""
