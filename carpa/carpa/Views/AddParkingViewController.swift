@@ -250,13 +250,15 @@ extension AddParkingViewController : CLLocationManagerDelegate{
 
 extension AddParkingViewController {
     func addParking() {
-        let parkingModel: ParkingModel = ParkingModel(buildingCode: txtBuildingCode.text, carPlateNo: txtCarLicensePlate.text, dateTimeOfParking: Date(), parkingHours: selectedHours, parkingId: UUID(), parkingLat: currentLat, parkingLng: currentLong, parkingStreetAddress: streetAddress, suitNoOfHost: txtSuitNoOfHost.text)
+        let userId = UUID(uuidString: appStore.getUserId())
+        let parkingModel: ParkingModel = ParkingModel(userId: userId, buildingCode: txtBuildingCode.text, carPlateNo: txtCarLicensePlate.text, dateTimeOfParking: Date(), parkingHours: selectedHours, parkingId: UUID(), parkingLat: currentLat, parkingLng: currentLong, parkingStreetAddress: streetAddress, suitNoOfHost: txtSuitNoOfHost.text)
         parkingRepo.createRecord(record: parkingModel)
         
         let parkingListViewController = self.storyboard?.instantiateViewController(identifier: "parking_list") as! ParkingTableViewController
                
-               self.navigationController?.pushViewController(parkingListViewController, animated: true)
+        self.navigationController?.popViewController(animated: true)
                print(#function, "Added parking")
+        
         
     }
 }

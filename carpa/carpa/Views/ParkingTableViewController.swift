@@ -12,7 +12,8 @@ class ParkingTableViewController: UIViewController, UITableViewDelegate, UITable
     
     let parkingRepo : ParkingRepo = ParkingRepo()
     let appStore : AppStore = AppStore()
-    var carPlateNo : String?
+    var userId : UUID?
+    var userEmail : String?
     var parkingRecords : [ParkingModel] = []
     
     
@@ -30,20 +31,21 @@ class ParkingTableViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "parking_cell", for: indexPath) as! ParkingTableViewCell
-                
-//                if (cell == nil) {
-//                    cell = UITableViewCell(
-//                        style: UITableViewCell.CellStyle.default,
-//                        reuseIdentifier: "parking_cell") as! ParkingTableViewCell
-//                }
-//        ce.text = "\(parkingRecords[indexPath.row].buildingCode!)"
         cell.txtStreetAddress.text = "\(parkingRecords[indexPath.row].parkingStreetAddress!)"
         cell.txtHoursParked.text = "\(parkingRecords[indexPath.row].parkingHours!)"
-        
+        cell.txtCarPlateNo.text = "\(parkingRecords[indexPath.row].carPlateNo!)"
                 print(parkingRecords[indexPath.row].parkingHours!)
-        
         return cell
-                
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let parkingDetails = storyboard?.instantiateViewController(identifier: "parking_details") as? ParkingDetailsViewController else {
+                print(#function, "Cannot find the parking detials view controller")
+                return
+            }
+        parkingDetails.parkingData = parkingRecords[indexPath.row]
+        show(parkingDetails, sender: self)
     }
     
     @IBOutlet weak var parkingTable: UITableView!
@@ -51,14 +53,20 @@ class ParkingTableViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Park car", style: .plain, target: self, action: #selector(addParkingBtnClicked))
-        carPlateNo = appStore.getCarPlateNo()
-        parkingRecords = parkingRepo.getAllParkings(carPlateNo:carPlateNo)
+        
+        userId = UUID(uuidString: appStore.getUserId())
+        parkingRecords = parkingRepo.getAllParkings(userId: userId)
         parkingTable.dataSource = self
         parkingTable.delegate = self
         parkingTable.rowHeight = 170
         
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        parkingRecords = parkingRepo.getAllParkings(userId: userId)
+       parkingTable.reloadData()
+   }
 
     @objc
        func addParkingBtnClicked() {

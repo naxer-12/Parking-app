@@ -33,6 +33,7 @@
 		D5C27F7E26542332006F3509 /* ParkingModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D5C27F7C26542331006F3509 /* ParkingModel.xcdatamodeld */; };
 		D5C27FC1265BC84D006F3509 /* AddParkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C27FC0265BC84D006F3509 /* AddParkingViewController.swift */; };
 		D5C27FC3265C080C006F3509 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C27FC2265C080C006F3509 /* Validation.swift */; };
+		D5C27FC5265D0C23006F3509 /* ParkingDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C27FC4265D0C23006F3509 /* ParkingDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		D5C27F7D26542331006F3509 /* ParkingModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ParkingModel.xcdatamodel; sourceTree = "<group>"; };
 		D5C27FC0265BC84D006F3509 /* AddParkingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddParkingViewController.swift; sourceTree = "<group>"; };
 		D5C27FC2265C080C006F3509 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		D5C27FC4265D0C23006F3509 /* ParkingDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				D5C27F7826540CE2006F3509 /* ParkingTableViewController.swift */,
 				52B9ECF4264D9CE80069C652 /* SignInController.swift */,
 				D5C27F7A26541B89006F3509 /* ParkingTableViewCell.swift */,
+				D5C27FC4265D0C23006F3509 /* ParkingDetailsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				5257693B265A82D9004B5669 /* CoreDataStorage.swift in Sources */,
 				52B9ECF3264D9CE80069C652 /* SceneDelegate.swift in Sources */,
 				52576959265AD1D1004B5669 /* UserExtension.swift in Sources */,
+				D5C27FC5265D0C23006F3509 /* ParkingDetailsViewController.swift in Sources */,
 				5257694D265A8FEB004B5669 /* Parking+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

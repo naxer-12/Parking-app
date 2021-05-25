@@ -9,7 +9,8 @@
 import Foundation
 
 class ParkingModel{
-     init(buildingCode: String?, carPlateNo: String?, dateTimeOfParking:Date?, parkingHours: String?, parkingId: UUID?, parkingLat: Double?, parkingLng: Double?, parkingStreetAddress: String?, suitNoOfHost: String?) {
+    init(userId:UUID?, buildingCode: String?, carPlateNo: String?, dateTimeOfParking:Date?, parkingHours: String?, parkingId: UUID?, parkingLat: Double?, parkingLng: Double?, parkingStreetAddress: String?, suitNoOfHost: String?) {
+        self.userId = userId
         self.buildingCode = buildingCode
         self.carPlateNo = carPlateNo
         self.dateTimeOfParking = dateTimeOfParking
@@ -21,6 +22,6 @@ class ParkingModel{
         self.suitNoOfHost = suitNoOfHost
     }
     
-     let buildingCode: String?, carPlateNo: String?, dateTimeOfParking:Date?, parkingHours: String?, parkingId: UUID?, parkingLat: Double?, parkingLng: Double?, parkingStreetAddress: String?, suitNoOfHost: String?
+    let userId: UUID?, buildingCode: String?, carPlateNo: String?, dateTimeOfParking:Date?, parkingHours: String?, parkingId: UUID?, parkingLat: Double?, parkingLng: Double?, parkingStreetAddress: String?, suitNoOfHost: String?
 }
     
